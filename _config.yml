@@ -3,7 +3,7 @@ plugins:
   - jekyll-remote-theme # add this line to the plugins list if you already have one
 nav:
   - name: 关于本站
-    link: /
+    link: /README.html
   - name: 博客归档
     link: /home.html
 
