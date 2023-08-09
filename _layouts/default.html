@@ -25,15 +25,16 @@
         <section id="downloads" class="clearfix">
             {% for item in site.nav %}
             {% if page.path == item.link %}
-                <a href="/blogs/{{ item.link }}" class="button">
+                <a href="/blogs/{{ item.link }}" style="font-size: 18px; margin-right: 5px">
                     <span style="color:#069">{{ item.name }}</span>
                 </a>
             {% else %}
-                <a href="/blogs/{{ item.link }}" class="button">
+                <a href="/blogs/{{ item.link }}" style="font-size: 18px; margin-right: 5px">
                     <span>{{ item.name }}</span>
                 </a>
             {% endif %}
             {% endfor %}
+
         </section>
         <hr>
         <section id="main_content">
