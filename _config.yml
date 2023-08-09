@@ -6,4 +6,5 @@ nav:
     link: index.html
   - name: 博客归档
     link: home.html
-
+  - name: 其它页面
+    link: test.html
