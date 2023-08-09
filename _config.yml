@@ -8,3 +8,5 @@ nav:
     link: home.html
   - name: 其它页面
     link: test.html
+other:
+  content: Hello World
