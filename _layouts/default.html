@@ -25,23 +25,15 @@
         <section id="downloads" class="clearfix">
             {% for item in site.nav %}
             {% if page.path == item.link %}
-                <a href="/blogs/{{ item.link }}" >
-                    <span style="background-color:#069">{{ item.name }}</span>
+                <a href="/blogs/{{ item.link }}" class="button">
+                    <span style="color:#069">{{ item.name }}</span>
                 </a>
             {% else %}
-                <a href="/blogs/{{ item.link }}" >
+                <a href="/blogs/{{ item.link }}" class="button">
                     <span>{{ item.name }}</span>
                 </a>
             {% endif %}
             {% endfor %}
-
-            {% if site.github.public %}
-            {% if site.github.is_project_page %}
-            <a href="{{ site.github.repository_url }}" id="view-on-github" class="button"><span>View on GitHub</span></a>
-            {% else %}
-            <a href="{{ site.github.owner_url }}" id="view-on-github" class="button"><span>View on GitHub</span></a>
-            {% endif %}
-            {% endif %}
         </section>
         <hr>
         <section id="main_content">
