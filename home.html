@@ -5,7 +5,7 @@ permalink: home.html
 <ul>
     {% for post in site.posts %}
     <li>
-        <h2 style="color:#39b4f9"><a href="/blogs{{ post.url }}">{{ post.title }} - {{ post.date }}</a></h2>
+        <h2 style="color:#39b4f9"><a href="/blogs{{ post.url }}">{{ page.date | date_to_long_string: "ordinal" }} - {{ post.title }} </a></h2>
     </li>
     {% endfor %}
 </ul>
