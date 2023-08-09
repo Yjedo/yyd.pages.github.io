@@ -24,12 +24,12 @@
         </header>
         <section id="downloads" class="clearfix">
             {% for item in site.nav %}
-            {% if page.url == item.link %}
-                <a href="{{item.link}}" >
+            {% if page.path == item.link %}
+                <a href="{{ item.link }}" >
                     <span style="background-color:#069">{{ item.name }}</span>
                 </a>
             {% else %}
-                <a href="{{item.link}}" >
+                <a href="{{ item.link }}" >
                     <span>{{ item.name }}</span>
                 </a>
             {% endif %}
