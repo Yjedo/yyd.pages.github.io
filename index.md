@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: index.html
+permalink: /
 ---
 This is my blogs.
 
