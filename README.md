@@ -1,1 +1,1 @@
-yyd.pages.github.io
+My blogs.
