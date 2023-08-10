@@ -15,7 +15,7 @@
 </head>
 
 <body style="display: grid; scroll-behavior: smooth;">
-<div id="top" class="top"></div>
+<div id="scrollTop" class="top"></div>
 <div id="container">
     <div class="inner">
 
@@ -128,18 +128,18 @@
         step();
     };
 
-    const top = document.getElementById('top')
-    top.addEventListener('click',function () {
+    const scrollTop = document.getElementById('scrollTop')
+    scrollTop.addEventListener('click',function () {
         alert("a")
         scrollTopSmooth(0);
     }, false)
 
     window.onscroll = function () {
         if (document.documentElement.scrollTop + document.body.scrollTop > 200) {
-            document.getElementById("top").style.display = "fixed";
+            document.getElementById("scrollTop").style.display = "fixed";
         }
         else {
-            document.getElementById("top").style.display = "none";
+            document.getElementById("scrollTop").style.display = "none";
         }
     }
 </script>
