@@ -15,7 +15,7 @@
 </head>
 
 <body style="display: grid; scroll-behavior: smooth;">
-<a class="top">返回顶部</a>
+<div class="top">返回顶部</div>
 <div id="container">
     <div class="inner">
 
@@ -107,13 +107,6 @@
     });
 </script>
 <style>
-    body {
-        display: grid;
-    }
-    html,
-    body {
-        scroll-behavior: smooth;
-    }
 
     a:hover {
         color: #39b4f9;
@@ -158,18 +151,17 @@
     }
 
     .top {
-        --offset: 100px;
-        position: sticky;
-        bottom: 20px;
-        right: 20px;
-        margin-right: 10px;
-        place-self: end;
-        margin-top: calc(100vh + var(--offset));
-        width: 60px;
-        aspect-ratio: 1;
+        position: fixed;
+        right: 30px;
+        bottom: 170px;
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: .3s;
+        box-shadow: 0 0 6px rgba(0, 0, 0, .12);
+        z-index: 5;
         background: #ff8b24;
-        border-radius: 50%;
-        font-size: 0;
     }
 
     .top::before {
