@@ -36,7 +36,7 @@
             {% endfor %}
 
         </section>
-
+        <hr>
         <div id="main_content" style="overflow: hidden">
             <div class="content" style="float: left; width: 75%; padding-right:10px; ">
                 {{content}}
@@ -48,9 +48,9 @@
                     <h2>{{ category[0] }}</h2>
                     <ul class="category-list">
                         {% for blog in category[1] %}
-                        <li ><a href="/blogs{{ blog.url }}"> {{ blog.title }} </a> </li>
+                        <li ><a href="/blogs{{ blog.url }}"> -{{ blog.title }} </a> </li>
                         {% endfor %}
-                        <li class="more-link"><a href="#"> 更多 </a> </li>
+                        <li class="more-link"><a href="#"> -更多 </a> </li>
                     </ul>
 
 
@@ -118,6 +118,8 @@
         @media screen and (max-width: 760px) {
             display:none;
             padding-left:10px;
+            border-left: 1px solid;
+            border-image: linear-gradient(to left,#e8e8e8 0%, #cccccc 50%, #e8e8e8 100%);
         }
     }
     .content{
@@ -127,18 +129,8 @@
         }
     }
 
-    .content {
-        position: relative;
-        padding: 10px; /* 调整为你需要的内边距 */
-        border: 2px solid #cccccc; /* 先设置一个透明的左边框 */
-        background: linear-gradient(to right, transparent, #fffaf0, transparent); /* 创建渐变背景 */
-
-        /* 调整右边框宽度和颜色位置，实现从上到下逐渐变浅的效果 */
-        background-size: 4px 100%;
-        background-position: 100% 0;
-    }
-
     .category-list li{
+        list-style: none;
         padding-left: 0px;
     }
     
