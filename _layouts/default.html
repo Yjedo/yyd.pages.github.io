@@ -39,11 +39,11 @@
         <hr>
 
         <div id="main_content" class="main-content">
-            <div class="content" style="float: left; padding-right:10px; ">
+            <div class="content"  >
                 {{content}}
             </div>
 
-            <div class="sidebar" style="float: left; ">
+            <div class="sidebar"  >
                 {% for category in site.categories %}
                 <div  style=" margin-top: 10px">
                     <h2>{{ category[0] }}</h2>
@@ -112,11 +112,9 @@
         color: #39b4f9;
     }
 
-    .main-content::after{
-        content: '';  <!--content指你写的父元素-->
-        display: block;
-        clear: both;
-    }
+
+
+
 
     .inner{
         @media screen and (max-width: 768px) {
@@ -126,7 +124,18 @@
             width: 70%;
         }
     }
+    .content{
+        float: left;
+        padding-right:10px;
+        @media screen and (max-width: 768px) {
+            width:100%;
+        }
+        @media screen and (min-width: 768px) {
+            width:75%;
+        }
+    }
     .sidebar{
+        float: left;
         @media screen and (max-width: 768px) {
             display: none !important;
             color: pink;
@@ -139,14 +148,12 @@
             border-image: linear-gradient(to bottom,#e8e8e8 0%, #cccccc 50%, #e8e8e8 100%) 2 2 2 2;
         }
     }
-    .content{
-        @media screen and (max-width: 768px) {
-           width:100%;
-        }
-        @media screen and (min-width: 768px) {
-            width:75%;
-        }
+    .main-content::after{
+        content: '';  <!--content指你写的父元素-->
+        display: block;
+        clear: both;
     }
+
 
 
     
