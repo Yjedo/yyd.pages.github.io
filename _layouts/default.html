@@ -104,19 +104,17 @@
             }
         });
     });
+
     const top = document.getElementById('top')
-    top.onclick = function(){
-        cancelAnimationFrame(timer);
-        timer = requestAnimationFrame(function fn(){
-            var oTop = document.body.scrollTop || document.documentElement.scrollTop;
-            if(oTop > 0){
-                document.body.scrollTop = document.documentElement.scrollTop = oTop - 50;
-                timer = requestAnimationFrame(fn);
-            }else{
-                cancelAnimationFrame(timer);
-            }
-        });
-    }
+    top.addEventListener('click',function (event) {
+        event.preventDefault();
+        let sTop = document.documentElement.scrollTop || document.body.scrollTop
+        if (sTop > 0) {
+            window.requestAnimationFrame(top)
+            window.scrollTo(0, sTop - sTop / 8)
+        }
+    })
+
     window.onscroll = function () {
         if (document.documentElement.scrollTop + document.body.scrollTop > 100) {
             document.getElementById("top").style.display = "fixed";
