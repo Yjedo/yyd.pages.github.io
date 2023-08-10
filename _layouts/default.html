@@ -49,17 +49,14 @@
                     <h3>{{blogGroup.name}}</h3>
                     <ul class="category-list">
                         {% for blog in blogGroup.items %}
-                        <li><span>{{ blog.title }}</span></li>
+                        <li style="list-style-type:none; padding-left: 5px"><span>{{ blog.title }}</span></li>
                         {% endfor %}
-                        <li id="toggleCategories"><span>查看更多</span></li>
+                        <li id="toggleCategories" style="list-style-type:none; padding-left: 5px"><span>查看更多</span></li>
                     </ul>
-
                 </div>
+                <hr>
                 {% endfor %}
             </div>
-
-            {% endfor %}
-
         </div >
 
 
