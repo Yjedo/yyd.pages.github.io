@@ -124,8 +124,13 @@
             width: 70%;
         }
     }
+
+    .main-content::after{
+        display: flex;
+        justify-content: center;
+    }
+
     .content{
-        float: left;
         padding-right:10px;
         @media screen and (max-width: 768px) {
             width:100%;
@@ -135,7 +140,6 @@
         }
     }
     .sidebar{
-        float: left;
         @media screen and (max-width: 768px) {
             display: none !important;
             color: pink;
@@ -148,11 +152,7 @@
             border-image: linear-gradient(to bottom,#e8e8e8 0%, #cccccc 50%, #e8e8e8 100%) 2 2 2 2;
         }
     }
-    .main-content::after{
-        content: '';  <!--content指你写的父元素-->
-        display: block;
-        clear: both;
-    }
+
 
 
 
