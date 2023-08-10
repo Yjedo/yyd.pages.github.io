@@ -49,9 +49,9 @@
                     <h3>{{blogGroup.name}}</h3>
                     <ul class="category-list">
                         {% for blog in blogGroup.items %}
-                        <li style="list-style-type:none; padding-left: 5px"><span>{{ blog.title }}</span></li>
+                        <li style="list-style-type:none; padding-left: 5px"><a href="/blogs{{ blog.url }}"> {{ blog.title }} </a> </li>
                         {% endfor %}
-                        <li id="toggleCategories" style="list-style-type:none; padding-left: 5px"><span>查看更多</span></li>
+                        <li id="toggleCategories" style="list-style-type:none; padding-left: 5px"><span>更多</span></li>
                     </ul>
                 </div>
                 {% endfor %}
