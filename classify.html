@@ -6,7 +6,7 @@ permalink: classify.html
     <h2>{{ category[0] }}</h2>
     <ul class="classify">
         {% for blog in category[1] %}
-        <li><a href="/blogs{{ blog.url }}"> -{{ blog.title }} </a></li>
+        <li><a href="/blogs{{ blog.url }}"> {{ blog.title }} </a></li>
         {% endfor %}
     </ul>
 {% endfor %}
