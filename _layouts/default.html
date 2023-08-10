@@ -42,7 +42,7 @@
                 {{content}}
             </div>
 
-            <div class="sidebar" style="float: left; width: 20%; margin-left: 5px">
+            <div class="sidebar" style="float: left; ">
                 {% for category in site.categories %}
                 <div  style=" margin-top: 10px">
                     <h2>{{ category[0] }}</h2>
@@ -120,6 +120,8 @@
             display:none;
         }
         @media screen and (min-width: 768px){
+            width: 20%;
+            margin-left: 5px;
             padding-left:10px;
             border-left: 1px solid;
             border-image: linear-gradient(to bottom,#e8e8e8 0%, #cccccc 50%, #e8e8e8 100%) 2 2 2 2;
