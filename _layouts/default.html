@@ -46,13 +46,14 @@
             <div class="sidebar" style="float: left; width: 20%; margin-left: 5px">
                 {% for category in site.categories %}
                 <div  style=" margin-top: 10px">
-                    <h3>{{ category[0] }}</h3>
+                    <h2>{{ category[0] }}</h2>
                     <ul class="category-list">
                         {% for blog in category[1] %}
-                        <li style="list-style-type:none; padding-left: 5px"><a href="/blogs{{ blog.url }}"> {{ blog.title }} </a> </li>
+                        <li ><a href="/blogs{{ blog.url }}"> {{ blog.title }} </a> </li>
                         {% endfor %}
-                        <li id="toggleCategories" style="list-style-type:none; padding-left: 5px"><span>更多</span></li>
                     </ul>
+
+                    <li class="more-link"><a href="#"> 更多 </a> </li>
                 </div>
                 {% endfor %}
             </div>
@@ -72,11 +73,33 @@
 </div>
 </body>
 <script>
-    const toggleButton = document.getElementById('toggleCategories');
-    const categoryList = document.querySelector('.category-list');
+    const categoryLists = document.querySelectorAll('.category-list');
 
-    toggleButton.addEventListener('click', () => {
-        categoryList.classList.toggle('expanded');
+    categoryLists.forEach(list => {
+        const listItems = list.querySelectorAll('li');
+        const moreLink = list.querySelector('.more-link');
+        const maxVisibleItems = 6; // 最大显示的列表项数量
+
+        // 初始时，隐藏多余的列表项
+        for (let i = maxVisibleItems; i < listItems.length - 1; i++) {
+            listItems[i].style.display = 'none';
+        }
+
+        moreLink.addEventListener('click', function(event) {
+            event.preventDefault();
+
+            // 切换显示隐藏的列表项
+            for (let i = maxVisibleItems; i < listItems.length - 1; i++) {
+                listItems[i].style.display = listItems[i].style.display === 'none' ? 'list-item' : 'none';
+            }
+
+            // 切换更多/收起文本
+            if (moreLink.textContent === '更多') {
+                moreLink.textContent = '收起';
+            } else {
+                moreLink.textContent = '更多';
+            }
+        });
     });
 </script>
 <style>
@@ -107,34 +130,12 @@
         position: relative;
         padding: 10px; /* 调整为你需要的内边距 */
         border-left: 1px solid transparent; /* 先设置一个透明的左边框 */
-        background: linear-gradient(to right, transparent, #cccccc, transparent); /* 创建渐变背景 */
+        background: linear-gradient(to right, transparent, #fffaf0, transparent); /* 创建渐变背景 */
 
         /* 调整右边框宽度和颜色位置，实现从上到下逐渐变浅的效果 */
         border-right: 2px solid #cccccc;
         background-size: 4px 100%;
         background-position: 100% 0;
-    }
-
-    /* 这个选择器是为了覆盖渐变右边框在最顶部和底部的颜色 */
-    .content:before,
-    .content:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 4px;
-        background: linear-gradient(to bottom, rgba(204, 204, 204, 0), #cccccc, rgba(204, 204, 204, 0));
-    }
-
-    /* 调整顶部和底部渐变的位置，实现从上到下逐渐变浅的效果 */
-    .content:before {
-        left: -2px;
-        background-position: 0 0;
-    }
-
-    .content:after {
-        right: -2px;
-        background-position: 0 100%;
     }
     
 </style>
