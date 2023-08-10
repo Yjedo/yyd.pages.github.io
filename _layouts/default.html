@@ -49,7 +49,7 @@
                     <h2>{{ category[0] }}</h2>
                     <ul class="category-list">
                         {% for blog in category[1] %}
-                        <li style=" list-style: none;padding-left: 0px;"><a href="/blogs{{ blog.url }}"> -{{ blog.title
+                        <li><a href="/blogs{{ blog.url }}"> -{{ blog.title
                             }} </a></li>
                         {% endfor %}
                         <li class="more-link" style=" list-style: none;padding-left: 0px;">-更多</li>
@@ -139,6 +139,14 @@
         overflow: hidden;
         display: block;
         visibility: hidden;
+    }
+
+    .category-list li{
+        list-style: none;
+        padding-left: 0;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
     }
 
     @media screen and (max-width: 768px) {
