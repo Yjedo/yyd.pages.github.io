@@ -151,21 +151,20 @@
 
     .top {
         --offset: 100px;
-
         position: sticky;
         bottom: 20px;
+        right: 20px;
         margin-right: 10px;
         place-self: end;
         margin-top: calc(100vh + var(--offset));
-
         width: 60px;
         aspect-ratio: 1;
         background: #ff8b24;
-        border-radius: 10px;
+        border-radius: 50%;
         font-size: 0;
     }
 
-    .top:before {
+    .top::before {
         content: "";
         position: absolute;
         inset: 30%;
