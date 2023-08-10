@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
+<html lang="{{ site.lang | default: 'EN-US' }}">
 <head>
     <meta charset='utf-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +16,7 @@
 
 <body>
 <div id="container">
-    <div class="inner" >
+    <div class="inner">
 
         <header>
             <h1>YeDong</h1>
@@ -25,13 +25,13 @@
         <section id="downloads" class="clearfix">
             {% for item in site.nav %}
             {% if page.path == item.link %}
-                <a href="/blogs/{{ item.link }}" style="font-size: 18px; margin-right: 5px">
-                    <span style="color:#069">{{ item.name }}</span>
-                </a>
+            <a href="/blogs/{{ item.link }}" style="font-size: 18px; margin-right: 5px">
+                <span style="color:#069">{{ item.name }}</span>
+            </a>
             {% else %}
-                <a href="/blogs/{{ item.link }}" style="font-size: 18px; margin-right: 5px">
-                    <span>{{ item.name }}</span>
-                </a>
+            <a href="/blogs/{{ item.link }}" style="font-size: 18px; margin-right: 5px">
+                <span>{{ item.name }}</span>
+            </a>
             {% endif %}
             {% endfor %}
 
@@ -39,25 +39,25 @@
         <hr>
 
         <div id="main_content" class="main-content">
-            <div class="content"  >
+            <div class="content">
                 {{content}}
             </div>
 
-            <div class="sidebar"  >
+            <div class="sidebar">
                 {% for category in site.categories %}
-                <div  style=" margin-top: 10px">
+                <div style=" margin-top: 10px">
                     <h2>{{ category[0] }}</h2>
                     <ul class="category-list">
                         {% for blog in category[1] %}
-                        <li style=" list-style: none;padding-left: 0px;"><a href="/blogs{{ blog.url }}"> -{{ blog.title }} </a> </li>
+                        <li style=" list-style: none;padding-left: 0px;"><a href="/blogs{{ blog.url }}"> -{{ blog.title
+                            }} </a></li>
                         {% endfor %}
-                        <li class="more-link" style=" list-style: none;padding-left: 0px;" >-更多</li>
+                        <li class="more-link" style=" list-style: none;padding-left: 0px;">-更多</li>
                     </ul>
                 </div>
                 {% endfor %}
             </div>
-        </div >
-
+        </div>
 
 
         <footer>
@@ -73,10 +73,10 @@
 </div>
 </body>
 <script>
-    if(window.innerWidth < 768){
-        const sideBar = document.querySelector(".sidebar");
-        sideBar.style.display = 'none';
-    }
+    // if (window.innerWidth < 768) {
+    //     const sideBar = document.querySelector(".sidebar");
+    //     sideBar.style.display = 'none';
+    // }
     const categoryLists = document.querySelectorAll('.category-list');
 
     categoryLists.forEach(list => {
@@ -89,7 +89,7 @@
             listItems[i].style.display = 'none';
         }
 
-        moreLink.addEventListener('click', function(event) {
+        moreLink.addEventListener('click', function (event) {
             event.preventDefault();
 
             // 切换显示隐藏的列表项
@@ -107,45 +107,32 @@
     });
 </script>
 <style>
-    a:hover{
+    a:hover {
         color: #39b4f9;
     }
 
-    .inner{
-        overflow: hidden;
-        @media screen and (max-width: 768px) {
-            width: 90%;
-        }
-        @media screen and (min-width: 768px) {
-            width: 70%;
-        }
+    .inner {
+        width: 70%;
     }
 
-    .content{
-        padding-right:10px;
-        @media screen and (max-width: 768px) {
-            width:100%;
-        }
-        @media screen and (min-width: 768px) {
-            width:75%;
-            float: left;
-        }
-    }
-    .sidebar{
-        @media screen and (max-width: 768px) {
-            display: none;
-        }
-        @media screen and (min-width: 768px){
-            width: 20%;
-            float: left;
-            margin-left: 5px;
-            padding-left:10px;
-            border-left: 1px solid;
-            border-image: linear-gradient(to bottom,#e8e8e8 0%, #cccccc 50%, #e8e8e8 100%) 2 2 2 2;
-        }
+    .content {
+        padding-right: 10px;
+        width: 75%;
+        float: left;
     }
 
-    .main-content::after{
+    .sidebar {
+        width: 20%;
+        float: left;
+        margin-left: 5px;
+        padding-left: 10px;
+        border-left: 1px solid;
+        border-image: linear-gradient(to bottom, #e8e8e8 0%, #cccccc 50%, #e8e8e8 100%) 2 2 2 2;
+
+    }
+
+    /*解决子元素float导致父元素高度塌陷*/
+    .main-content::after {
         content: "";
         height: 0;
         clear: both;
@@ -154,8 +141,20 @@
         visibility: hidden;
     }
 
+    @media screen and (max-width: 768px) {
+        .inner {
+            width: 90%;
+        }
+
+        .content {
+            width: 100%;
+        }
+
+        .sidebar {
+            display: none;
+        }
+    }
 
 
-    
 </style>
 </html>
