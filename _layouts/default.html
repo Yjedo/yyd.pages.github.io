@@ -39,7 +39,7 @@
         <hr>
 
         <div id="main_content" style="overflow: hidden">
-            <div class="content" style="float: left; width: 75%; padding-right:10px; border-right: 1px solid #cccccc; ">
+            <div class="content" style="float: left; width: 75%; padding-right:10px; ">
                 {{content}}
             </div>
 
@@ -102,5 +102,40 @@
             padding-right:2px;
         }
     }
+
+    .content {
+        position: relative;
+        padding: 10px; /* 调整为你需要的内边距 */
+        border-left: 1px solid transparent; /* 先设置一个透明的左边框 */
+        background: linear-gradient(to right, transparent, #cccccc, transparent); /* 创建渐变背景 */
+
+        /* 调整右边框宽度和颜色位置，实现从上到下逐渐变浅的效果 */
+        border-right: 2px solid #cccccc;
+        background-size: 4px 100%;
+        background-position: 100% 0;
+    }
+
+    /* 这个选择器是为了覆盖渐变右边框在最顶部和底部的颜色 */
+    .content:before,
+    .content:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: linear-gradient(to bottom, rgba(204, 204, 204, 0), #cccccc, rgba(204, 204, 204, 0));
+    }
+
+    /* 调整顶部和底部渐变的位置，实现从上到下逐渐变浅的效果 */
+    .content:before {
+        left: -2px;
+        background-position: 0 0;
+    }
+
+    .content:after {
+        right: -2px;
+        background-position: 0 100%;
+    }
+    
 </style>
 </html>
