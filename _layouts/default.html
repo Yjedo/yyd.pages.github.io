@@ -18,25 +18,27 @@
 <div id="container">
     <div class="inner">
 
-        <header>
-            <h1>YeDong</h1>
-            <h2>欲买桂花同载酒，终不似，少年游</h2>
-        </header>
-        <section id="downloads" class="clearfix">
-            {% for item in site.nav %}
-            {% if page.path == item.link %}
-            <a href="/blogs/{{ item.link }}" style="font-size: 18px; margin-right: 5px">
-                <span style="color:#069">{{ item.name }}</span>
-            </a>
-            {% else %}
-            <a href="/blogs/{{ item.link }}" style="font-size: 18px; margin-right: 5px">
-                <span>{{ item.name }}</span>
-            </a>
-            {% endif %}
-            {% endfor %}
+       <div class="head">
+           <header style="">
+               <h1>YeDong</h1>
+               <h2>欲买桂花同载酒，终不似，少年游</h2>
+           </header>
+           <section id="downloads" class="clearfix">
+               {% for item in site.nav %}
+               {% if page.path == item.link %}
+               <a href="/blogs/{{ item.link }}" style="font-size: 18px; margin-right: 5px">
+                   <span style="color:#069">{{ item.name }}</span>
+               </a>
+               {% else %}
+               <a href="/blogs/{{ item.link }}" style="font-size: 18px; margin-right: 5px">
+                   <span>{{ item.name }}</span>
+               </a>
+               {% endif %}
+               {% endfor %}
 
-        </section>
-        <hr>
+           </section>
+           <hr>
+       </div>
 
         <div id="main_content" class="main-content">
             <div class="content">
@@ -109,6 +111,9 @@
 <style>
     a:hover {
         color: #39b4f9;
+    }
+    .head{
+        position:sticky;
     }
 
     .inner {
