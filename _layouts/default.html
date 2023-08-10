@@ -82,7 +82,7 @@
     categoryLists.forEach(list => {
         const listItems = list.querySelectorAll('li');
         const moreLink = list.querySelector('.more-link');
-        const maxVisibleItems = 1; // 最大显示的列表项数量
+        const maxVisibleItems = 5; // 最大显示的列表项数量
 
         // 初始时，隐藏多余的列表项
         for (let i = maxVisibleItems; i < listItems.length - 1; i++) {
