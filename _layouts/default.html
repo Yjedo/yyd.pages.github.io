@@ -39,7 +39,7 @@
         <hr>
 
         <div id="main_content" style="overflow: hidden">
-            <div class="content" style="float: left; width: 80%; border-left: 1px solid #cccccc">
+            <div class="content" style="float: left; width: 75%; border-right: 1px solid #ccccc; padding-right: 5px">
                 {{content}}
             </div>
 
@@ -94,6 +94,11 @@
     .sidebar{
         @media screen and (max-width: 760px) {
             display:none;
+        }
+    }
+    .content{
+        @media screen and (max-width: 760px) {
+           width:100%;
         }
     }
 </style>
