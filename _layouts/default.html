@@ -37,7 +37,7 @@
 
         </section>
         <hr>
-        <div id="main_content" style="overflow: hidden">
+        <div id="main_content" class="main_content">
             <div class="content" style="float: left; padding-right:10px; ">
                 {{content}}
             </div>
@@ -141,6 +141,15 @@
         @media screen and (min-width: 768px) {
             width:75%;
         }
+    }
+
+    .main_content{
+        content: "";  <!--content指你写的父元素-->
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+
     }
     
 </style>
