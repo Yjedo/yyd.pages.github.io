@@ -36,7 +36,6 @@
             {% endfor %}
 
         </section>
-        <hr>
 
         <div id="main_content" style="overflow: hidden">
             <div class="content" style="float: left; width: 75%; padding-right:10px; ">
@@ -129,11 +128,10 @@
     .content {
         position: relative;
         padding: 10px; /* 调整为你需要的内边距 */
-        border-left: 1px solid transparent; /* 先设置一个透明的左边框 */
+        border: 2px solid #cccccc; /* 先设置一个透明的左边框 */
         background: linear-gradient(to right, transparent, #fffaf0, transparent); /* 创建渐变背景 */
 
         /* 调整右边框宽度和颜色位置，实现从上到下逐渐变浅的效果 */
-        border-right: 2px solid #cccccc;
         background-size: 4px 100%;
         background-position: 100% 0;
     }
