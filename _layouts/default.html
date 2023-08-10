@@ -78,7 +78,7 @@
     categoryLists.forEach(list => {
         const listItems = list.querySelectorAll('li');
         const moreLink = list.querySelector('.more-link');
-        const maxVisibleItems = 6; // 最大显示的列表项数量
+        const maxVisibleItems = 2; // 最大显示的列表项数量
 
         // 初始时，隐藏多余的列表项
         for (let i = maxVisibleItems; i < listItems.length - 1; i++) {
@@ -117,9 +117,11 @@
     .sidebar{
         @media screen and (max-width: 760px) {
             display:none;
+        }
+        @media screen and (min-width: 760px){
             padding-left:10px;
             border-left: 1px solid;
-            border-image: linear-gradient(to left,#e8e8e8 0%, #cccccc 50%, #e8e8e8 100%);
+            border-image: linear-gradient(to bottom,#e8e8e8 0%, #cccccc 50%, #e8e8e8 100%);
         }
     }
     .content{
