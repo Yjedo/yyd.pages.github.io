@@ -39,16 +39,16 @@
         <hr>
 
         <div id="main_content" style="overflow: hidden">
-            <div class="content" style="float: left; width: 75%; border-right: 1px solid #cccccc; ">
+            <div class="content" style="float: left; width: 75%; padding-right:10px; border-right: 1px solid #cccccc; ">
                 {{content}}
             </div>
 
             <div class="sidebar" style="float: left; width: 20%; margin-left: 5px">
-                {% for blogGroup in site.posts | group_by:"category" %}
+                {% for category in site.categories %}
                 <div  style=" margin-top: 10px">
-                    <h3>{{blogGroup.name}}</h3>
+                    <h3>{{ category[0] }}</h3>
                     <ul class="category-list">
-                        {% for blog in blogGroup.items %}
+                        {% for blog in category[1] %}
                         <li style="list-style-type:none; padding-left: 5px"><a href="/blogs{{ blog.url }}"> {{ blog.title }} </a> </li>
                         {% endfor %}
                         <li id="toggleCategories" style="list-style-type:none; padding-left: 5px"><span>更多</span></li>
@@ -99,6 +99,7 @@
     .content{
         @media screen and (max-width: 760px) {
            width:100%;
+            padding-right:2px;
         }
     }
 </style>
