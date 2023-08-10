@@ -50,7 +50,7 @@
                         {% for blog in category[1] %}
                         <li ><a href="/blogs{{ blog.url }}"> -{{ blog.title }} </a> </li>
                         {% endfor %}
-                        <li class="more-link"><span>-more</span> </li>
+                        <li class="more-link">-更多</li>
                     </ul>
 
 
@@ -101,11 +101,11 @@
 
             // 切换更多/收起文本
             alert(moreLink.textContent)
-            alert(moreLink.textContent === "-more")
-            if (moreLink.textContent === "-more") {
+            alert(moreLink.textContent === "-更多")
+            if (moreLink.textContent === "-更多") {
                 moreLink.textContent = "-收起";
             } else {
-                moreLink.textContent = "-more";
+                moreLink.textContent = "-更多";
             }
         });
     });
