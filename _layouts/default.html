@@ -39,12 +39,12 @@
         <hr>
 
         <div id="main_content" style="overflow: hidden">
-            <div class="content" style="float: left; width: 75%; border-right: 1px solid #ccccc; padding-right: 5px">
+            <div class="content" style="float: left; width: 75%; border-right: 1px solid #cccccc; ">
                 {{content}}
             </div>
 
-            <div class="sidebar" style="float: left; width: 20%;">
-                {% for blogGroup in (site.posts | group_by:"category") %}
+            <div class="sidebar" style="float: left; width: 20%; margin-left: 5px">
+                {% for blogGroup in site.posts | group_by:"category" %}
                 <div  style=" margin-top: 10px">
                     <h3>{{blogGroup.name}}</h3>
                     <ul class="category-list">
