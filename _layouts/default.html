@@ -42,22 +42,24 @@
             <div class="content" style="float: left; width: 80%">
                 {{content}}
             </div>
+
             <div class="sidebar" style="float: left; width: 20%;">
+                {% for blogGroup in (site.posts | group_by:"category") %}
                 <div  style=" margin-top: 10px">
-                    <h3>Categories</h3>
+                    <h3>{{blogGroup.name}}</h3>
                     <ul class="category-list">
-                        <li><span>Category 1</span></li>
-                        <li><span>Category 2</span></li>
-                        <li><span>Category 3</span></li>
-                        <li><span>Category 4</span></li>
-                        <li><span>Category 5</span></li>
-                        <li><span>Category 6</span></li>
-                        <li><span>Category 7</span></li>
-                        <!-- More categories... -->
+                        {% for blog in blogGroup.items %}
+                        <li><span>{{ blog.title }}</span></li>
+                        {% endfor %}
+                        <li id="toggleCategories"><span>查看更多</span></li>
                     </ul>
-                    <button id="toggleCategories">Toggle Categories</button>
+
                 </div>
+                {% endfor %}
             </div>
+
+            {% endfor %}
+
         </div >
 
 
