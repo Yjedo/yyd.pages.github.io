@@ -121,12 +121,6 @@
         }
     }
 
-    .main-content{
-        display: flex;
-        justify-content: space-around;
-        width: 100%;
-    }
-
     .content{
         padding-right:10px;
         @media screen and (max-width: 768px) {
@@ -134,15 +128,16 @@
         }
         @media screen and (min-width: 768px) {
             width:75%;
+            float: left;
         }
     }
     .sidebar{
         @media screen and (max-width: 768px) {
-            display: none !important;
-            color: pink;
+            display: none;
         }
         @media screen and (min-width: 768px){
             width: 20%;
+            float: left;
             margin-left: 5px;
             padding-left:10px;
             border-left: 1px solid;
@@ -150,6 +145,14 @@
         }
     }
 
+    main-content :after{
+        content: "";
+        height: 0;
+        clear: both;
+        overflow: hidden;
+        display: block;
+        visibility: hidden;
+    }
 
 
 
