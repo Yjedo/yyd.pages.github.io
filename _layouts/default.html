@@ -37,7 +37,8 @@
 
         </section>
         <hr>
-        <div id="main_content" class="main_content">
+
+        <div id="main_content" class="main-content">
             <div class="content" style="float: left; padding-right:10px; ">
                 {{content}}
             </div>
@@ -52,8 +53,6 @@
                         {% endfor %}
                         <li class="more-link" style=" list-style: none;padding-left: 0px;" >-更多</li>
                     </ul>
-
-
                 </div>
                 {% endfor %}
             </div>
@@ -113,6 +112,12 @@
         color: #39b4f9;
     }
 
+    #main_content:after{
+        content: '';  <!--content指你写的父元素-->
+        display: block;
+        clear: both;
+    }
+
     .inner{
         @media screen and (max-width: 768px) {
             width: 90%;
@@ -143,11 +148,7 @@
         }
     }
 
-    .main_content:after{
-        content: "";  <!--content指你写的父元素-->
-        display: block;
-        clear: both;
-    }
+
     
 </style>
 </html>
