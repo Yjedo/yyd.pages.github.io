@@ -61,7 +61,7 @@
             </div>
         </div>
 
-
+        <a href="#" class="top">返回顶部</a>
         <footer>
             Forget about the days when it's been cloudy. But don't forget your hours in the sun.<br>
             Forget about the times you have been defeated. But don't forget the victories you have won.<br>
@@ -153,6 +153,31 @@
         overflow:hidden;
         text-overflow:ellipsis;
         white-space:nowrap;
+    }
+
+    .top {
+        --offset: 100px;
+
+        position: sticky;
+        bottom: 20px;
+        margin-right: 10px;
+        place-self: end;
+        margin-top: calc(100vh + var(--offset));
+
+        width: 60px;
+        aspect-ratio: 1;
+        background: #ff8b24;
+        border-radius: 10px;
+        font-size: 0;
+    }
+
+    .top:before {
+        content: "";
+        position: absolute;
+        inset: 30%;
+        transform: translateY(20%) rotate(-45deg);
+        border-top: 5px solid #fff;
+        border-right: 5px solid #fff;
     }
 
     @media screen and (max-width: 768px) {

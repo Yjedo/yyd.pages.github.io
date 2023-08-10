@@ -6,6 +6,8 @@ nav:
     link: index.html
   - name: 博客归档
     link: home.html
+  - name: 博客分类
+    link: classify.html
   - name: 留言板
     link: comment.html
 other:
