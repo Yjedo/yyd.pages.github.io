@@ -40,7 +40,20 @@
         <section id="main_content">
             {{ content }}
         </section>
-
+        <aside class="sidebar">
+            <h3>Categories</h3>
+            <ul class="category-list">
+                <li><span>Category 1</span></li>
+                <li><span>Category 2</span></li>
+                <li><span>Category 3</span></li>
+                <li><span>Category 4</span></li>
+                <li><span>Category 5</span></li>
+                <li><span>Category 6</span></li>
+                <li><span>Category 7</span></li>
+                <!-- More categories... -->
+            </ul>
+            <button id="toggleCategories">Toggle Categories</button>
+        </aside>
         <footer>
             {% if site.github.is_project_page %}
             {{ site.title | default: site.github.repository_name }} is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a><br>
@@ -51,4 +64,12 @@
     </div>
 </div>
 </body>
+<script>
+    const toggleButton = document.getElementById('toggleCategories');
+    const categoryList = document.querySelector('.category-list');
+
+    toggleButton.addEventListener('click', () => {
+        categoryList.classList.toggle('expanded');
+    });
+</script>
 </html>
