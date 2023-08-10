@@ -16,7 +16,7 @@
 
 <body>
 <div id="container">
-    <div class="inner">
+    <div class="inner" style="width: 1000px">
 
         <header>
             <h1>YeDong</h1>
@@ -39,7 +39,7 @@
         <hr>
 
         <div id="main_content" style="overflow: hidden">
-            <div class="content" style="float: left; width: 80%">
+            <div class="content" style="float: left; width: 80%; border-left: 1px solid #cccccc">
                 {{content}}
             </div>
 
@@ -54,7 +54,6 @@
                         <li id="toggleCategories" style="list-style-type:none; padding-left: 5px"><span>查看更多</span></li>
                     </ul>
                 </div>
-                <hr>
                 {% endfor %}
             </div>
         </div >
@@ -80,4 +79,5 @@
         categoryList.classList.toggle('expanded');
     });
 </script>
+
 </html>
