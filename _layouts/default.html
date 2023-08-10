@@ -74,6 +74,11 @@
 </div>
 </body>
 <script>
+    if(window.innerWidth < 768){
+        alert(window.innerWidth)
+        const sideBar = document.querySelector(".sidebar");
+        sideBar.style.display = 'none';
+    }
     const categoryLists = document.querySelectorAll('.category-list');
 
     categoryLists.forEach(list => {
@@ -96,7 +101,8 @@
 
             // 切换更多/收起文本
             alert(moreLink.textContent)
-            if (moreLink.textContent == '-更多') {
+            alert(moreLink.textContent === '-更多')
+            if (moreLink.textContent === '-更多') {
                 moreLink.textContent = '-收起';
             } else {
                 moreLink.textContent = '-更多';
