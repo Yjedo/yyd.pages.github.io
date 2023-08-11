@@ -21,7 +21,7 @@ layout: default
 
 我非常欢迎大家在博文下方留下你们的评论和想法。如果你对某篇博文有疑问，或者有什么建议，都可以留言与我互动。同时，你也可以通过以下方式联系我，与我进行更深入的交流和互动：
 
-- github：https://github.com/yedong666
+- github：[https://github.com/yedong666](https://github.com/yedong666)
 - email：yedongyang6277@gmail.com
 
 ## 结语
